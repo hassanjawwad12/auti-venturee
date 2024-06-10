@@ -16,7 +16,7 @@ import {
   IconButton,
   Box,
 } from "@chakra-ui/react";
-import { FaRegUser, FaBars } from "react-icons/fa";
+import {  FaBars } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import Settings from "./Settings";
 
@@ -37,7 +37,7 @@ const Navbar = () => {
       >
         <HStack bg={"#adf6f2"} width={"70%"}>
           <Settings />
-          <Image ml={10} src="lion.png" width={"10%"} height={"auto"} />
+          <Image ml={10} src="lion.png" width={['20%','10%']} height={"auto"} />
           <Spacer />
           <Box display={{ base: "block", md: "none" }}>
             <IconButton
@@ -53,7 +53,7 @@ const Navbar = () => {
               <Text fontSize={'5xl'} cursor={"pointer"} onClick={() => navigate("/dashboard")}>
                 HOME
               </Text>
-              <Text fontSize={'5xl'} cursor={"pointer"} onClick={() => navigate("/tasks")}>TASKS</Text>
+              <Text fontSize={'5xl'} cursor={"pointer"} onClick={() => navigate("/games")}>TASKS</Text>
               <Text fontSize={'5xl'} cursor={"pointer"} onClick={() => navigate("/games")}>GAMES</Text>
             </HStack>
           </Box>
