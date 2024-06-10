@@ -45,25 +45,25 @@ const Games = () => {
           width={["100%", "100%"]}
         >
           <VStack cursor={"pointer"}>
-            <Image src="find.jpg" width={["200px", "500px"]} height={"auto"} />
+            <Image src="find.jpg" width={["200px", "450px"]} height={"auto"} />
             <Text>Seek and Find</Text>
           </VStack>
           <VStack cursor={"pointer"}>
             <Image
               src="zombie.jpg"
-              width={["200px", "500px"]}
+              width={["200px", "450px"]}
               height={"auto"}
             />
             <Text>Zombie Survival</Text>
           </VStack>
           <VStack cursor={"pointer"}>
-            <Image src="dost.jpg" width={["200px", "500px"]} height={"auto"} />
+            <Image src="dost.jpg" width={["200px", "450px"]} height={"auto"} />
             <Text>Key Finder</Text>
           </VStack>
           <VStack cursor={"pointer"}>
             <Image
               src="sudoku.jpg"
-              width={["200px", "500px"]}
+              width={["200px", "450px"]}
               height={"auto"}
             />
             <Text>Tile Smasher</Text>
