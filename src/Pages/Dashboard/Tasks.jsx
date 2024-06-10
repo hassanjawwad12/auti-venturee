@@ -30,11 +30,13 @@ const Tasks = () => {
         </Text>
         <Image src="1453025.png" width={["20%", "20%"]} height={"auto"} />
       </HStack>
-      <VStack
-        width={"70%"}
+      <HStack
+        width={['100%','90%']}
         position={"relative"}
-        mt={20}
-        height="70vh"
+        mt={'20'}
+        align={"center"}
+        justifyContent={"center"}
+        height={['30vh','70vh']}
         overflow="hidden"
       >
         <IconButton
@@ -65,10 +67,10 @@ const Tasks = () => {
           src={images[currentSlide]}
           alt="Slide Image"
           objectFit="cover"
-          width="50%"
+          width="40%"
           height="auto"
         />
-      </VStack>
+      </HStack>
     </VStack>
   );
 };
