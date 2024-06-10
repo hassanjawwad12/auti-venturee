@@ -18,6 +18,7 @@ import {
 } from "@chakra-ui/react";
 import { FaRegUser, FaBars } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import Settings from "./Settings";
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -35,12 +36,7 @@ const Navbar = () => {
         bg={"#adf6f2"}
       >
         <HStack bg={"#adf6f2"} width={"70%"}>
-          <VStack>
-            <Icon as={FaRegUser} boxSize={16} color={"#2cccc4"} />
-            <Text as={"i"} fontSize={"2xl"} color={"black"}>
-              Profile
-            </Text>
-          </VStack>
+          <Settings />
           <Image ml={10} src="lion.png" width={"10%"} height={"auto"} />
           <Spacer />
           <Box display={{ base: "block", md: "none" }}>
