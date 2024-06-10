@@ -1,15 +1,18 @@
-import React from 'react'
-import Navbar from './Navbar'
-import { Image } from "@chakra-ui/react";
+import React from "react";
+import Navbar from "./Navbar";
+import { Image, VStack, Text, Icon, Stack} from "@chakra-ui/react";
+import { IoAddCircleOutline } from "react-icons/io5";
+import Footer from "../Footer";
+import Container from "./Container";
 
 const Games = () => {
   return (
-  <>
-   <Navbar />
-   <Image src="lion2.png" width={'100%'} height={'40vh'} alt="Games" />
-   
-  </>
-  )
-}
+    <>
+      <Navbar />
+      
+      <Footer />
+    </>
+  );
+};
 
-export default Games
+export default Games;
