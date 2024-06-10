@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { VStack, IconButton, Image, Text, HStack } from "@chakra-ui/react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
+import AddTask from "./AddTask";
 
 const Tasks = () => {
   const images = ["brush.jpg", "gardening.jpg", "fruits.jpg"];
@@ -71,6 +72,7 @@ const Tasks = () => {
           height="auto"
         />
       </HStack>
+      <AddTask />
     </VStack>
   );
 };

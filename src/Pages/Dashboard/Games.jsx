@@ -3,8 +3,10 @@ import Navbar from "./Navbar";
 import Footer from "../Footer";
 import Tasks from "./Tasks";
 import { VStack, Image, Text, HStack, Stack } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 const Games = () => {
+  const navigate = useNavigate();
   return (
     <>
       <Navbar />
@@ -44,11 +46,11 @@ const Games = () => {
           direction={["column", "row"]}
           width={["100%", "100%"]}
         >
-          <VStack cursor={"pointer"}>
+          <VStack onClick={() => navigate("/find")} cursor={"pointer"}>
             <Image src="find.jpg" width={["200px", "450px"]} height={"auto"} />
             <Text>Seek and Find</Text>
           </VStack>
-          <VStack cursor={"pointer"}>
+          <VStack onClick={() => navigate("/zombie")} cursor={"pointer"}>
             <Image
               src="zombie.jpg"
               width={["200px", "450px"]}
@@ -56,11 +58,11 @@ const Games = () => {
             />
             <Text>Zombie Survival</Text>
           </VStack>
-          <VStack cursor={"pointer"}>
+          <VStack onClick={() => navigate("/key")} cursor={"pointer"}>
             <Image src="dost.jpg" width={["200px", "450px"]} height={"auto"} />
             <Text>Key Finder</Text>
           </VStack>
-          <VStack cursor={"pointer"}>
+          <VStack onClick={() => navigate("/brick")} cursor={"pointer"}>
             <Image
               src="sudoku.jpg"
               width={["200px", "450px"]}
