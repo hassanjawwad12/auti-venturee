@@ -4,6 +4,7 @@ import { FiFacebook } from "react-icons/fi";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import Footer from "./Footer";
 
 const Landing = () => {
     const navigate = useNavigate();
@@ -97,28 +98,7 @@ const Landing = () => {
           <Icon as={FaInstagram} boxSize={16} color={"#f1c50e"} />
         </HStack>
       </VStack>
-      <VStack
-        width={"100%"}
-        height={"30vh"}
-        align={"center"}
-        justifyContent={"center"}
-        spacing={"2"}
-        bg={"#333333"}
-        py={2}
-      >
-        <Text textAlign={"center"} fontSize={["md", "20px"]} color={"white"}>
-          © 2023 Autiventure. All rights reserved.
-        </Text>
-        <Text textAlign={"center"} fontSize={["md", "20px"]} color={"white"}>
-          Autiventure is a registered trademark of NUCES@lhr
-        </Text>
-        <Text textAlign={"center"} fontSize={["md", "20px"]} color={"white"}>
-          Terms of Service | Privacy Policy | Cookie Policy{" "}
-        </Text>
-        <Text textAlign={"center"} fontSize={["md", "20px"]} color={"white"}>
-          Designed with ❤️ by the AUTIVENTURE team.
-        </Text>
-      </VStack>
+      <Footer />
     </>
   );
 };
