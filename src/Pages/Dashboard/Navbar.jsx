@@ -15,7 +15,6 @@ import {
   useDisclosure,
   IconButton,
   Box,
-  Stack
 } from "@chakra-ui/react";
 import { FaRegUser, FaBars } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
@@ -53,13 +52,15 @@ const Navbar = () => {
               onClick={onOpen}
             />
           </Box>
-          <Stack direction={'row'} display={{ base: "none", md: "block" }}>
-            <Text px={4} fontSize={'5xl'} cursor={"pointer"} onClick={() => navigate("/dashboard")}>
-              HOME
-            </Text>
-            <Text px={4} fontSize={'5xl'} onClick={() => navigate("/tasks")}>TASKS</Text>
-            <Text px={4} fontSize={'5xl'} onClick={() => navigate("/games")}>GAMES</Text>
-          </Stack>
+          <Box display={{ base: "none", md: "block" }}>
+            <HStack spacing={4} px={4}>
+              <Text fontSize={'5xl'} cursor={"pointer"} onClick={() => navigate("/dashboard")}>
+                HOME
+              </Text>
+              <Text fontSize={'5xl'} cursor={"pointer"} onClick={() => navigate("/tasks")}>TASKS</Text>
+              <Text fontSize={'5xl'} cursor={"pointer"} onClick={() => navigate("/games")}>GAMES</Text>
+            </HStack>
+          </Box>
         </HStack>
       </HStack>
 
@@ -73,8 +74,8 @@ const Navbar = () => {
                 <Text fontSize={'5xl'} cursor={"pointer"} onClick={() => { navigate("/dashboard"); onClose(); }}>
                   HOME
                 </Text>
-                <Text fontSize={'5xl'} onClick={() => { navigate("/tasks"); onClose(); }}>TASKS</Text>
-                <Text fontSize={'5xl'} onClick={() => { navigate("/games"); onClose(); }}>GAMES</Text>
+                <Text fontSize={'5xl'} cursor={"pointer"} onClick={() => { navigate("/tasks"); onClose(); }}>TASKS</Text>
+                <Text fontSize={'5xl'} cursor={"pointer"} onClick={() => { navigate("/games"); onClose(); }}>GAMES</Text>
               </VStack>
             </DrawerBody>
           </DrawerContent>
