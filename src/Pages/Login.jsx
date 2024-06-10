@@ -96,8 +96,8 @@ const Login = () => {
               bg: "#2cccc4",
               color: "black",
             }}
-            onClick={() => navigate("/login")}
-          >
+            onClick={() => navigate("/dashboard")}
+            >
             Login
           </Button>
           <Text
@@ -119,7 +119,3 @@ const Login = () => {
 };
 
 export default Login;
-
-/*
-
-*/

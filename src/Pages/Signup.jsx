@@ -130,7 +130,7 @@ const Signup = () => {
               bg: "#2cccc4",
               color: "black",
             }}
-            onClick={() => navigate("/login")}
+            onClick={() => navigate("/dashboard")}
           >
             Confirm Signup
           </Button>
