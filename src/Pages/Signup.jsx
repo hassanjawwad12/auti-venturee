@@ -9,6 +9,7 @@ import {
   Input,
   Checkbox,
   HStack,
+  useToast
 } from "@chakra-ui/react";
 import { FaRegUser } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
@@ -16,11 +17,64 @@ import { useState } from "react";
 
 const Signup = () => {
   const navigate = useNavigate();
+  const toast = useToast();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [dob, setDob] = useState("");
   const [guardianemail, setGuardianemail] = useState("");
   const [gender , setGender] = useState("");
+
+  const handleSignup = () => {
+    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+    const passwordRegex = /^.{8,}$/;
+  
+    if (username === "" || password === "" || dob === "" || guardianemail === "" || gender === "") {
+      toast({
+        title: "Error",
+        description: "All fields are required.",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+        position: "top-right",
+      });
+      return;
+    }
+  
+    if (!emailRegex.test(guardianemail)) {
+      toast({
+        title: "Error",
+        description: "Please enter a valid email address.",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+        position: "top-right",
+      });
+      return;
+    }
+  
+    if (!passwordRegex.test(password)) {
+      toast({
+        title: "Error",
+        description: "Password must be at least 8 characters long.",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+        position: "top-right",
+      });
+      return;
+    }
+  
+    // If all checks pass, show success toast and navigate to dashboard
+    toast({
+      title: "Success",
+      description: "Signup successful.",
+      status: "success",
+      duration: 4000,
+      isClosable: true,
+      position: "top-right",
+    });
+    navigate("/dashboard");
+  };
 
   return (
     <>
@@ -72,6 +126,7 @@ const Signup = () => {
             p={4}
             bg={"white"}
             color={"black"}
+            type="password"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -82,6 +137,7 @@ const Signup = () => {
             height={"7vh"}
             width={"80%"}
             p={4}
+            type="date"
             bg={"white"}
             color={"black"}
             placeholder="Date of Birth"
@@ -130,7 +186,7 @@ const Signup = () => {
               bg: "#2cccc4",
               color: "black",
             }}
-            onClick={() => navigate("/dashboard")}
+            onClick={handleSignup}
           >
             Confirm Signup
           </Button>

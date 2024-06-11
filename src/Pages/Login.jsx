@@ -9,6 +9,7 @@ import {
   Input,
   Checkbox,
   HStack,
+  useToast
 } from "@chakra-ui/react";
 import { FaRegUser } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
@@ -16,8 +17,50 @@ import { useState } from "react";
 
 const Login = () => {
   const navigate = useNavigate();
+  const toast= useToast();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+  const handleLogin = () => {
+    const passwordRegex = /^.{8,}$/;
+  
+    if (username === "" || password === "" ) {
+      toast({
+        title: "Error",
+        description: "All fields are required.",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+        position: "top-right",
+      });
+      return;
+    }
+  
+  
+    if (!passwordRegex.test(password)) {
+      toast({
+        title: "Error",
+        description: "Password must be at least 8 characters long.",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+        position: "top-right",
+      });
+      return;
+    }
+  
+    // If all checks pass, show success toast and navigate to dashboard
+    toast({
+      title: "Success",
+      description: "Login successful.",
+      status: "success",
+      duration: 4000,
+      isClosable: true,
+      position: "top-right",
+    });
+    navigate("/dashboard");
+  };
+
 
   
   return (
@@ -67,6 +110,7 @@ const Login = () => {
             rounded={"16px"}
             height={"7vh"}
             width={"80%"}
+            type="password"
             p={4}
             bg={"white"}
             color={"black"}
@@ -96,7 +140,7 @@ const Login = () => {
               bg: "#2cccc4",
               color: "black",
             }}
-            onClick={() => navigate("/dashboard")}
+            onClick={handleLogin}
             >
             Login
           </Button>
